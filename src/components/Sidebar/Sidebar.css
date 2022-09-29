@@ -12,3 +12,10 @@
 .round-name {
     border-radius: 50%;
 }
+
+.restTime button {
+    border-radius: 50%;
+    color: green;
+    font-weight: 700;
+    margin: 0 10px;
+}

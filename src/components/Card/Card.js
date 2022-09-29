@@ -12,7 +12,7 @@ const Card = (props) => {
                 <p>for age : {age}</p>
                 <p>Time required : {time} minute</p>
             </div>
-            <button onClick={() => props.handleAdCart(props.product)} className='btn-cart'>
+            <button onClick={() => handleAdTime()} className='btn-cart'>
                 <p>add to list</p>
             </button>
         </div>
