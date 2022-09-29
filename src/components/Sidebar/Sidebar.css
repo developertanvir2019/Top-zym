@@ -1,0 +1,14 @@
+.author {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.information {
+    background-color: rgb(224, 223, 223);
+    padding: 20px;
+}
+
+.round-name {
+    border-radius: 50%;
+}
