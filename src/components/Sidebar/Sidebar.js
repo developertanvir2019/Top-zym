@@ -41,7 +41,7 @@ const Sidebar = () => {
 
             <div className="exercise-details mt-4">
                 <h4>exercise-details</h4>
-                <h6 className='py-2'>Exercise time : minute</h6>
+                <h6 className='py-2'>Exercise time : { } minute</h6>
                 <h6 className='py-2'>Break Time :{rest} minute</h6>
             </div>
             <button className='btn btn-success px-4 py-1'>Activity Complete</button>
