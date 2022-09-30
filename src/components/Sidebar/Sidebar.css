@@ -7,6 +7,8 @@
 .information {
     background-color: rgb(224, 223, 223);
     padding: 20px;
+    position: sticky;
+    top: 0;
 }
 
 .round-name {

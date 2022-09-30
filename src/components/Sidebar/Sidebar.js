@@ -1,12 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import sidebar from './Sidebar.css'
 
 const Sidebar = (total) => {
     const [rest, setrest] = useState(0);
 
-
+    const notify = () => toast("Congratulations ! You complete your task easily");
     const handleRest = (e) => {
         setrest(e)
     }
@@ -45,7 +47,11 @@ const Sidebar = (total) => {
                 <h6 className='py-2'>Exercise time : {total.total} minute</h6>
                 <h6 className='py-2'>Break Time :{rest} minute</h6>
             </div>
-            <button className='btn btn-success px-4 py-1'>Activity Complete</button>
+
+            <div>
+                <button className='btn btn-success px-4 py-1' onClick={notify}>Activity Complete</button>
+                <ToastContainer />
+            </div>
 
         </div>
     );
