@@ -10,9 +10,28 @@ const Sidebar = (total) => {
 
     const notify = () => toast("Congratulations ! You complete your task easily");
 
+    useEffect(() => {
+        let getCartNumber = CartNumber();
+        let setCart = [];
+        setCart.push(getCartNumber)
+        setrest(setCart)
+    }, [])
     const handleRest = (e) => {
         localStorage.setItem('time', e)
         setrest(e)
+    }
+
+
+
+    const CartNumber = () => {
+        let totalMin = {};
+
+        //get the shopping cart from local storage
+        const storedCart = localStorage.getItem('time');
+        if (storedCart) {
+            totalMin = JSON.parse(storedCart);
+        }
+        return totalMin;
     }
     return (
         <div className='pt-5 information'>
