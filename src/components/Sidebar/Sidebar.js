@@ -9,7 +9,9 @@ const Sidebar = (total) => {
     const [rest, setrest] = useState(0);
 
     const notify = () => toast("Congratulations ! You complete your task easily");
+
     const handleRest = (e) => {
+        localStorage.setItem('time', e)
         setrest(e)
     }
     return (
