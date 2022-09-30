@@ -1,11 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
 import card from './Card.css'
 
-
 const Card = (props) => {
-    const handleAdTime = (time) => {
-        localStorage.setItem(time, time)
-    }
+    // const [timeAdd, setTime] = useState('wejhjks');
+
     const { name, Details, age, time, img } = props.card;
     return (
         <div className='single-product'>
@@ -16,7 +15,7 @@ const Card = (props) => {
                 <p>for age : {age}</p>
                 <p>Time required : {time} minute</p>
             </div>
-            <button onClick={() => handleAdTime(time)} className='btn-cart'>
+            <button onClick={() => props.handleAdTime(props.card)} className='btn-cart'>
                 <p>add to list</p>
             </button>
         </div>

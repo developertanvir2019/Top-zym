@@ -2,21 +2,41 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Card from '../Card/Card';
+import Sidebar from '../Sidebar/Sidebar';
 import css from './Cards.css'
 
 const Cards = () => {
     const [cardInfo, setCardInfo] = useState([]);
+    const [TotalTime, setTotalTime] = useState(0);
     useEffect(() => {
         fetch('workout.json')
             .then(res => res.json())
             .then(data => setCardInfo(data))
     }, []);
+    // let totalTime = 0;
+    // for (const carti of cardInfo) {
+    // }
+    // const [getTime, setTime] = useState(0)
+    // const totalTime = 0
 
+    const handleAdTime = (cardInfo) => {
+        let cardTimee = TotalTime + cardInfo.time;
+
+        setTotalTime(cardTimee)
+    }
     return (
-        <div className='card-container'>
-            {
-                cardInfo.map(single => <Card key={single.img} card={single}></Card>)
-            }
+        <div>
+            <h2 className='py-4'>Select today’s exercise</h2>
+            <div className='card-container'>
+                <div className="work-container">
+                    {
+                        cardInfo.map(single => <Card key={single.img} card={single} handleAdTime={handleAdTime} ></Card>)
+                    }
+                </div>
+                <div className="information-container">
+                    <Sidebar total={TotalTime}></Sidebar>
+                </div>
+            </div>
         </div>
     );
 };

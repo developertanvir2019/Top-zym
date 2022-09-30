@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Cards from './components/Cards/Cards';
 import Navbar from './components/Navbar/Navbar';
-import Body from './components/Body/Body';
+import Qustion from './components/Qustion/Qustion';
 
 function App() {
   return (
     <div className="App container">
-      <Body></Body>
+      <Navbar></Navbar>
+      <Cards></Cards>
+      <Qustion></Qustion>
     </div>
   );
 }
