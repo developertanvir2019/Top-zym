@@ -6,33 +6,18 @@ import { useState } from 'react';
 import sidebar from './Sidebar.css'
 
 const Sidebar = (total) => {
-    const [rest, setrest] = useState(0);
+    const [breaks, setbreaks] = useState(0);
 
     const notify = () => toast("Congratulations ! You complete your task easily");
 
-    useEffect(() => {
-        let getCartNumber = CartNumber();
-        let setCart = [];
-        setCart.push(getCartNumber)
-        setrest(setCart)
-    }, [])
-    const handleRest = (e) => {
-        localStorage.setItem('time', e)
-        setrest(e)
+    const handleRest = (value) => {
+        localStorage.removeItem('time');
+        localStorage.setItem('time', value);
+        setbreaks(localStorage.getItem('time'))
     }
+    const prevItem = localStorage.getItem('time');
 
 
-
-    const CartNumber = () => {
-        let totalMin = {};
-
-        //get the shopping cart from local storage
-        const storedCart = localStorage.getItem('time');
-        if (storedCart) {
-            totalMin = JSON.parse(storedCart);
-        }
-        return totalMin;
-    }
     return (
         <div className='pt-5 information'>
             <div className='d-flex'>
@@ -66,7 +51,8 @@ const Sidebar = (total) => {
             <div className="exercise-details mt-4">
                 <h4>exercise-details</h4>
                 <h6 className='py-2'>Exercise time : {total.total} minute</h6>
-                <h6 className='py-2'>Break Time :{rest} minute</h6>
+                {prevItem ? <h6 className='py-2'>Break Time :{prevItem} minute</h6> : <h6 className='py-2'>Break Time :{breaks} minute</h6>}
+
             </div>
 
             <div>
