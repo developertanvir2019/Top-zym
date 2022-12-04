@@ -9,14 +9,14 @@ const Card = (props) => {
     return (
         <div className='single-product'>
             <img src={img} alt="" />
-            <div className="product-info">
+            <div className="product-info px-2">
                 <h3>{name}</h3>
                 <p className='text-muted'><small>{Details}</small></p>
                 <p>for age : {age}</p>
                 <p>Time required : {time} minute</p>
             </div>
-            <button onClick={() => props.handleAdTime(props.card)} className='btn-cart'>
-                <p>add to list</p>
+            <button onClick={() => props.handleAdTime(props.card)} className='btn-cart py-2 w-100'>
+                Add to list
             </button>
         </div>
     );

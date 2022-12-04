@@ -13,11 +13,6 @@ const Cards = () => {
             .then(res => res.json())
             .then(data => setCardInfo(data))
     }, []);
-    // let totalTime = 0;
-    // for (const carti of cardInfo) {
-    // }
-    // const [getTime, setTime] = useState(0)
-    // const totalTime = 0
 
     const handleAdTime = (cardInfo) => {
         let cardTimee = TotalTime + cardInfo.time;
